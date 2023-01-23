@@ -1,0 +1,83 @@
+Plan for the brainfuck compiler
+-------------------------------
+
+No more interpreting. We are going binary.
+
+Wait no I am not talking about genders-
+
+// I.   Brainfuck in general //
+
+    1.  Language design (ripped from Wikipedia)
+
+    The language consists of eight commands, listed
+    below. A brainfuck program is a sequence of these
+    commands, possibly interspersed with other
+    characters (which are ignored). The commands are
+    executed sequentially, with some exceptions: an
+    instruction pointer begins at the first command,
+    and each command it points to is executed, after
+    which it normally moves forward to the next
+    command. The program terminates when the
+    instruction pointer moves past the last command.
+
+    The brainfuck language uses a simple machine
+    model consisting of the program and instruction
+    pointer, as well as a one-dimensional array of at
+    least 30,000 byte cells initialized to zero; a
+    movable data pointer (initialized to point to the
+    leftmost byte of the array); and two streams of
+    bytes for input and output (most often connected
+    to a keyboard and a monitor respectively, and
+    using the ASCII character encoding).
+
+    2.  Brainfuck instruction set
+
+    +   -   Increment current pointer value by 1
+    -   -   Decrement current pointer value by 1
+    >   -   Increment pointer position by 1
+    <   -   Decrement pointer position by 1
+    .   -   Output current pointer value to console
+    ,   -   Get one character from console
+    [   -   If the value at the current pointer position
+            is zero, skip to the next "]" instruction
+    ]   -   If the value at the current pointer position
+            is non-zero, jump back to the previous "["
+            instruction
+
+// II.  How I am going to write this //
+
+    1. Language for the BF compiler
+
+    We are going C.
+
+    2. Basic design
+
+    -   Generates C code first and then compiles the C
+        code to binary with a minimal compiler.
+    -   An instruction is represented with a struct that
+        we will define later.
+    -   An array will be defined in the C code that is
+        generated, which will act as the stack for the
+        Brainfuck code, with a fixed size of 1024 for
+        testing.
+    -   A pointer traverses the array and executes the
+        actions.
+    
+    3. Process
+
+        1.  Brainfuck code input
+        2.  Pre-processing: Removes all whitespace and 
+            invalid characters
+        3.  Parsing: Stores all instructions into a list
+        4.  Translating: Translates to C code, unformatted
+        5.  Compiling: Compiles C code
+
+// III. Detailed Plans //
+
+    1. Modules
+
+    - instructions.h (Just instructions handling)
+    - instructionList
+    - instructionParse
+    - instructionPreprocess
+    - instruction2Code

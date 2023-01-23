@@ -1,0 +1,9 @@
+{
+    "c-cpp-flylint.cppcheck.suppressions": [
+        "unusedStructMember",
+        "cstyleCast"
+    ],
+    "cSpell.words": [
+        "nextptr"
+    ]
+}
