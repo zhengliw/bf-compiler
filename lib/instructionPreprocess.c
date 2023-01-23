@@ -20,6 +20,8 @@ char * instructionPreprocess(char * instructionString)
     {
         if(instructionChar(instructionString[i]) != INVALID)
         {
+            // Only add character and increment index
+            // if instruction is valid
             preprocessedString[j] = instructionString[i];
             j++;
         }
