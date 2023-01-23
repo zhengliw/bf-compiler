@@ -1,8 +1,8 @@
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
-#include "instructionPreprocess.h"
-#include "instructions.h"
+#include "../include/preprocessing/instructionPreprocess.h"
+#include "../include/instructions.h"
 
 char * instructionPreprocess(char * instructionString)
 {
@@ -16,11 +16,12 @@ char * instructionPreprocess(char * instructionString)
 
     memset(preprocessedString, '\0', instructionStringLength * sizeof(char));
 
-    for(size_t i = 0; i < instructionStringLength; i++)
+    for(size_t i = 0, j = 0; i <= instructionStringLength; i++)
     {
         if(instructionChar(instructionString[i]) != INVALID)
         {
-            preprocessedString[i] = instructionString[i];
+            preprocessedString[j] = instructionString[i];
+            j++;
         }
     }
     preprocessedStringLength = strlen(preprocessedString) + 1;

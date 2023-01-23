@@ -1,0 +1,1 @@
+All the tests are for playing around manual testing so don't expect much lol

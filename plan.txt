@@ -76,7 +76,7 @@ Wait no I am not talking about genders-
 
     1. Modules
 
-    - instructions.h (Just instructions handling)
+    - instructions.h (Just instructions)
     - instructionList
     - instructionParse
     - instructionPreprocess

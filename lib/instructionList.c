@@ -1,4 +1,5 @@
-#include "instructionList.h"
+#include <stdlib.h>
+#include "../include/instructionList.h"
 
 InstructionNode *addInstruction(InstructionList *instructionList, Instruction instruction)
 {

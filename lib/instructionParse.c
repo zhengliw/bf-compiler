@@ -1,4 +1,4 @@
-#include "instructionParse.h"
+#include "../include/parsing/instructionParse.h"
 #include <stdlib.h>
 
 InstructionList parseInstructionString(const char * string)
@@ -9,7 +9,7 @@ InstructionList parseInstructionString(const char * string)
 
     for(size_t i = 0; string[i] != '\0'; i++)
     {
-        type = parseInstructionChar(string[i]);
+        type = instructionChar(string[i]);
         if(type == INVALID)
         {
             continue;

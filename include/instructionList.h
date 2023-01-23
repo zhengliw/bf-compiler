@@ -5,22 +5,26 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-typedef struct 
+struct instructionNode
 {
     Instruction instruction;
-    InstructionNode * nextInstructionNode;
-} InstructionNode;
+    struct instructionNode *nextInstructionNode;
+};
 
-typedef struct
+typedef struct instructionNode InstructionNode;
+
+struct instructionList
 {
-    InstructionNode * begin;
-    InstructionNode * end;
+    InstructionNode *begin;
+    InstructionNode *end;
     size_t listLength;
-} InstructionList;
+};
 
-void initInstructionList(InstructionList * instructionList);
-InstructionNode * addInstruction(InstructionList * instructionList, const Instruction instruction);
-Instruction * instructionListArray(const InstructionList instructionList);
-void freeInstructionList(InstructionList * instructionList);
+typedef struct instructionList InstructionList;
+
+void initInstructionList(InstructionList *instructionList);
+InstructionNode *addInstruction(InstructionList *instructionList, const Instruction instruction);
+Instruction *instructionListArray(const InstructionList instructionList);
+void freeInstructionList(InstructionList *instructionList);
 
 #endif

@@ -1,4 +1,4 @@
-#include "instructions.h"
+#include "../include/instructions.h"
 
 InstructionType instructionChar(const char instruction)
 {
