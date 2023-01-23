@@ -4,7 +4,6 @@
 #include "instructions.h"
 #include "instructionList.h"
 
-InstructionType parseInstructionChar(const char instruction);
 InstructionList parseInstructionString(const char * string);
 
 #endif

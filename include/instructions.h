@@ -20,4 +20,6 @@ typedef struct
     int repeatCount;
 } Instruction;
 
+InstructionType instructionChar(const char instruction);
+
 #endif

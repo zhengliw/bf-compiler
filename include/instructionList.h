@@ -18,7 +18,7 @@ typedef struct
     size_t listLength;
 } InstructionList;
 
-void initInstructionList(InstructionList * instructionList)
+void initInstructionList(InstructionList * instructionList);
 InstructionNode * addInstruction(InstructionList * instructionList, const Instruction instruction);
 Instruction * instructionListArray(const InstructionList instructionList);
 void freeInstructionList(InstructionList * instructionList);
