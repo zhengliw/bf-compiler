@@ -53,7 +53,7 @@ Wait no I am not talking about genders-
     2. Basic design
 
     -   Generates C code first and then compiles the C
-        code to binary with a minimal compiler.
+        code to binary with an **external** minimal compiler.
     -   An instruction is represented with a struct that
         we will define later.
     -   An array will be defined in the C code that is
