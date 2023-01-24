@@ -1,19 +1,21 @@
 #include "instructionParse.h"
+#include "../instructions/instructions.h"
 #include <stdlib.h>
+#include <string.h>
 
-InstructionList parseInstructionString(const char * string)
+InstructionList *parseInstructionString(const char * preprocessedString)
 {
-    InstructionList instructionList;
-    InstructionType type;
-    Instruction instruction;
+    InstructionList *instructionList = newInstructionList();
 
-    for(size_t i = 0; string[i] != '\0'; i++)
+    if(!instructionList)
     {
-        type = instructionChar(string[i]);
-        if(type == INVALID)
-        {
-            continue;
-        }
-        
+        return NULL;
     }
+
+    for(size_t i = 0; preprocessedString[i] != '\0'; i++)
+    {
+        InstructionType type = instructionChar(preprocessedString[i]);
+        addInstruction(instructionList, type);
+    }
+    return instructionList;
 }

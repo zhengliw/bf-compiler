@@ -1,14 +1,33 @@
 #include <stdlib.h>
 #include "instructionList.h"
 
-InstructionNode *addInstruction(InstructionList *instructionList, Instruction instruction)
+InstructionList *newInstructionList(void)
 {
+    InstructionList *instructionList = malloc(sizeof(InstructionList));
+    if(instructionList)
+    {
+        instructionList->begin = NULL;
+        instructionList->end = NULL;
+        instructionList->listLength = 0;
+    }
+    return instructionList;
+}
+
+InstructionNode *addInstruction(InstructionList *instructionList, const InstructionType instructionType)
+{
+    if(instructionList->end->instruction.type = instructionType)
+    {
+        ++instructionList->end->instruction.repeatCount;
+        return instructionList->end;
+    }
+    
     InstructionNode *node = malloc(sizeof(InstructionNode));
     if (!node)
     {
         return NULL;
     }
-    node->instruction = instruction;
+    node->instruction.type = instructionType;
+    node->instruction.repeatCount = 1;
     node->nextInstructionNode = NULL;
 
     if (instructionList->listLength == 0)

@@ -1,7 +1,7 @@
 #ifndef INSTRUCTION_LIST_H
 #define INSTRUCTION_LIST_H
 
-#include "instructions.h"
+#include "../instructions/instructions.h"
 #include <stdbool.h>
 #include <stddef.h>
 
@@ -22,8 +22,8 @@ struct instructionList
 
 typedef struct instructionList InstructionList;
 
-void initInstructionList(InstructionList *instructionList);
-InstructionNode *addInstruction(InstructionList *instructionList, const Instruction instruction);
+InstructionList *newInstructionList(void);
+InstructionNode *addInstruction(InstructionList *instructionList, const InstructionType instructionType);
 Instruction *instructionListArray(const InstructionList instructionList);
 void freeInstructionList(InstructionList *instructionList);
 
