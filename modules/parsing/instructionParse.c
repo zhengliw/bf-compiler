@@ -1,4 +1,4 @@
-#include "../include/parsing/instructionParse.h"
+#include "instructionParse.h"
 #include <stdlib.h>
 
 InstructionList parseInstructionString(const char * string)

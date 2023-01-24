@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../include/preprocessing/instructionPreprocess.h"
+#include "../modules/preprocessing/instructionPreprocess.h"
 int main(void)
 {
     puts("Screw you. Here is the test.");
@@ -7,7 +7,7 @@ int main(void)
     while(1)
     {
         fgets(buffer, 30, stdin);
-        puts(instructionPreprocess(buffer));
+        printf(instructionPreprocess(buffer));
     }
     return 0;
 }

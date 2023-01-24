@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "../include/instructionList.h"
+#include "instructionList.h"
 
 InstructionNode *addInstruction(InstructionList *instructionList, Instruction instruction)
 {

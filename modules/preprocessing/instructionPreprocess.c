@@ -1,10 +1,10 @@
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
-#include "../include/preprocessing/instructionPreprocess.h"
+#include "instructionPreprocess.h"
 #include "../include/instructions.h"
 
-char * instructionPreprocess(char * instructionString)
+char * instructionPreprocess(const char * instructionString)
 {
     size_t instructionStringLength = strlen(instructionString) + 1;
     char * preprocessedString = malloc(instructionStringLength * sizeof(char));
@@ -16,14 +16,15 @@ char * instructionPreprocess(char * instructionString)
 
     memset(preprocessedString, '\0', instructionStringLength * sizeof(char));
 
-    for(size_t i = 0, j = 0; i <= instructionStringLength; i++)
+    for(size_t i = 0, j = 0; i <= instructionStringLength; ++i)
     {
         if(instructionChar(instructionString[i]) != INVALID)
         {
-            // Only add character and increment index
-            // if instruction is valid
+            // Skip all invalid characters
+            // Don't increment j if char
+            // is invalid
             preprocessedString[j] = instructionString[i];
-            j++;
+            ++j;
         }
     }
     preprocessedStringLength = strlen(preprocessedString) + 1;
