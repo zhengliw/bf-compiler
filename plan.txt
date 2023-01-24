@@ -68,9 +68,10 @@ Wait no I am not talking about genders-
         1.  Brainfuck code input
         2.  Pre-processing: Removes all whitespace and 
             invalid characters
-        3.  Parsing: Stores all instructions into a list
-        4.  Translating: Translates to C code, unformatted
-        5.  Compiling: Compiles C code
+        3.  Checking: Is the amount of "[" and "]" equal?
+        4.  Parsing: Stores all instructions into a list
+        5.  Translating: Translates to C code, unformatted
+        6.  Compiling: Compiles C code with external compiler
 
 // III. Detailed Plans //
 
@@ -79,5 +80,6 @@ Wait no I am not talking about genders-
     - instructions.h (Just instructions)
     - instructionList
     - instructionParse
+    - instructionCheck
     - instructionPreprocess
-    - instruction2Code
+    - instructionTranslate

@@ -8,6 +8,8 @@ int main(void)
     {
         fgets(buffer, 30, stdin);
         printf(instructionPreprocess(buffer));
+        while(getchar()!='\n');
+        puts("---")
     }
     return 0;
 }

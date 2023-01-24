@@ -4,6 +4,6 @@
 #include "../instructions/instructions.h"
 #include "../instructionList/instructionList.h"
 
-InstructionList parseInstructionString(const char * string);
+InstructionList *parseInstructionString(const char *string);
 
 #endif

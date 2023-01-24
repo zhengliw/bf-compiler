@@ -4,10 +4,14 @@
         "cstyleCast"
     ],
     "cSpell.words": [
-        "nextptr"
+        "nextptr",
+        "Preprocess"
     ],
     "files.associations": {
         "instructionpreprocess.h": "c",
-        "stddef.h": "c"
-    }
+        "stddef.h": "c",
+        "stdbool.h": "c",
+        "instructionlist.h": "c"
+    },
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
 }

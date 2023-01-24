@@ -2,9 +2,9 @@
 #include <string.h>
 #include <stdlib.h>
 #include "instructionPreprocess.h"
-#include "../include/instructions.h"
+#include "../instructions/instructions.h"
 
-char * instructionPreprocess(const char * instructionString)
+char * instructionPreprocess(char * instructionString, bool freeInstructionStringAfterUsed)
 {
     size_t instructionStringLength = strlen(instructionString) + 1;
     char * preprocessedString = malloc(instructionStringLength * sizeof(char));
@@ -29,5 +29,11 @@ char * instructionPreprocess(const char * instructionString)
     }
     preprocessedStringLength = strlen(preprocessedString) + 1;
     preprocessedString = realloc(preprocessedString, preprocessedStringLength);
+
+    if(freeInstructionStringAfterUsed)
+    {
+        free(instructionString);
+    }
+
     return preprocessedString;
 }

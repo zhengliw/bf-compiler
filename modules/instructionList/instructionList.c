@@ -4,7 +4,7 @@
 InstructionList *newInstructionList(void)
 {
     InstructionList *instructionList = malloc(sizeof(InstructionList));
-    if(instructionList)
+    if (instructionList)
     {
         instructionList->begin = NULL;
         instructionList->end = NULL;
@@ -15,12 +15,12 @@ InstructionList *newInstructionList(void)
 
 InstructionNode *addInstruction(InstructionList *instructionList, const InstructionType instructionType)
 {
-    if(instructionList->end->instruction.type = instructionType)
+    if (instructionList->end != NULL && instructionList->end->instruction.type == instructionType)
     {
         ++instructionList->end->instruction.repeatCount;
         return instructionList->end;
     }
-    
+
     InstructionNode *node = malloc(sizeof(InstructionNode));
     if (!node)
     {
@@ -42,6 +42,8 @@ InstructionNode *addInstruction(InstructionList *instructionList, const Instruct
         instructionList->end = node;
     }
 
+    ++instructionList->listLength;
+
     return node;
 }
 
@@ -55,4 +57,5 @@ void freeInstructionList(InstructionList *instructionList)
         free(ptr);
         ptr = nextptr;
     }
+    free(instructionList);
 }
