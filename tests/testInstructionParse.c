@@ -7,15 +7,15 @@ int main(void)
 {
     puts("Supply brainfuck instructions:");
 
-    char * buf = malloc(30 * sizeof(char));
+    char *buf = (char *)malloc(30 * sizeof(char));
 
     fgets(buf, 30, stdin);
 
     buf = instructionPreprocess(buf, 1);
 
-    InstructionList * instructionList = parseInstructionString(buf);
+    InstructionList *instructionList = parseInstructionString(buf);
 
-    if(!instructionList)
+    if (!instructionList)
     {
         puts("Instruction parsing failed.");
         return 1;
@@ -25,7 +25,7 @@ int main(void)
 
     InstructionNode *ptr = instructionList->begin;
 
-    for(int i = 0; i < instructionList->listLength; i++, ptr=ptr->nextInstructionNode)
+    for (int i = 0; i < instructionList->listLength; i++, ptr = ptr->nextInstructionNode)
     {
         printf(
             "Instruction Type: %d\n"

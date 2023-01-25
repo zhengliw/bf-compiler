@@ -1,9 +1,10 @@
 #include <stdlib.h>
+#include <stdio.h> // NULL
 #include "instructionList.h"
 
 InstructionList *newInstructionList(void)
 {
-    InstructionList *instructionList = malloc(sizeof(InstructionList));
+    InstructionList *instructionList = (InstructionList *)malloc(sizeof(InstructionList));
     if (instructionList)
     {
         instructionList->begin = NULL;

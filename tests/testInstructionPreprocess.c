@@ -1,15 +1,21 @@
 #include <stdio.h>
+#include <string.h>
 #include "../modules/preprocessing/instructionPreprocess.h"
 int main(void)
 {
     puts("Screw you. Here is the test.");
     char buffer[30] = {0};
-    while(1)
+    char *newline = NULL;
+    while (1)
     {
         fgets(buffer, 30, stdin);
-        printf(instructionPreprocess(buffer));
-        while(getchar()!='\n');
-        puts("---")
+        if ((newline = strchr(buffer, '\n')) != NULL)
+            *newline = '\0';
+        else
+            while(getchar()!='\n');
+        printf("%s", instructionPreprocess(buffer, false));
+        memset(buffer, '\0', 30 * sizeof(char));
+        puts("\n---");
     }
     return 0;
 }
