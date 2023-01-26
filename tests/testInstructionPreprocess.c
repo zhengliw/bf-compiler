@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "../modules/preprocessing/instructionPreprocess.h"
+#include "../src/modules/preprocessing/instructionPreprocess.h"
 int main(void)
 {
     puts("Screw you. Here is the test.");

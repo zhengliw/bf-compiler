@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../modules/instructionList/instructionList.h"
+#include "../src/modules/instructionList/instructionList.h"
 int main(void)
 {
     InstructionList * testInstructionList = newInstructionList();
@@ -20,7 +20,7 @@ int main(void)
 
     InstructionNode *ptr = testInstructionList->begin;
 
-    for(int i = 0; i < testInstructionList->listLength; i++, ptr=ptr->nextInstructionNode)
+    for(size_t i = 0; i < testInstructionList->listLength; i++, ptr=ptr->nextInstructionNode)
     {
         printf(
             "Instruction Type: %d\n"

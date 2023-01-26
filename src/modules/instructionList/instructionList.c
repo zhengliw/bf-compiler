@@ -1,6 +1,8 @@
 #include <stdlib.h>
-#include <stdio.h> // NULL
+// #include <stdio.h> // NULL
+#include <stddef.h>
 #include "instructionList.h"
+#include "../instructions/instructions.h"
 
 InstructionList *newInstructionList(void)
 {
@@ -22,7 +24,7 @@ InstructionNode *addInstruction(InstructionList *instructionList, const Instruct
         return instructionList->end;
     }
 
-    InstructionNode *node = malloc(sizeof(InstructionNode));
+    InstructionNode *node = (InstructionNode *) malloc(sizeof(InstructionNode));
     if (!node)
     {
         return NULL;

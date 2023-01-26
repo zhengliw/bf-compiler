@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../modules/instructionList/instructionList.h"
-#include "../modules/parsing/instructionParse.h"
-#include "../modules/preprocessing/instructionPreprocess.h"
+#include "../src/modules/instructionList/instructionList.h"
+#include "../src/modules/parsing/instructionParse.h"
+#include "../src/modules/preprocessing/instructionPreprocess.h"
 int main(void)
 {
     puts("Supply brainfuck instructions:");
@@ -25,7 +25,7 @@ int main(void)
 
     InstructionNode *ptr = instructionList->begin;
 
-    for (int i = 0; i < instructionList->listLength; i++, ptr = ptr->nextInstructionNode)
+    for (size_t i = 0; i < instructionList->listLength; i++, ptr = ptr->nextInstructionNode)
     {
         printf(
             "Instruction Type: %d\n"
