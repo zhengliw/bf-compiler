@@ -24,7 +24,6 @@ typedef struct instructionList InstructionList;
 
 InstructionList *newInstructionList(void);
 InstructionNode *addInstruction(InstructionList *instructionList, const InstructionType instructionType);
-Instruction *instructionListArray(const InstructionList instructionList);
 void freeInstructionList(InstructionList *instructionList);
 
 #endif
