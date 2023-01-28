@@ -4,6 +4,16 @@
 #include "preprocessing.h"
 #include "../instructions/instructions.h"
 
+/**
+ * @brief preprocess a string
+ * 
+ * @param instructionString 
+ * @param freeInstructionStringAfterUsed 
+ * @return char* 
+ * 
+ * This function is fail-safe. The original
+ * instructionString is returned when fail.
+ */
 char *instructionPreprocess(char *instructionString, bool freeInstructionStringAfterUsed)
 {
     size_t instructionStringLength = strlen(instructionString) + 1;
@@ -11,7 +21,7 @@ char *instructionPreprocess(char *instructionString, bool freeInstructionStringA
     size_t preprocessedStringLength;
     if (!preprocessedString)
     {
-        return NULL;
+        return instructionString;
     }
 
     memset(preprocessedString, '\0', instructionStringLength * sizeof(char));

@@ -4,6 +4,15 @@
 #include "../instructions/instructions.h"
 #define CODELINE_BUF_SIZE 64
 
+const char *CODE_PREFIX =
+    "#include <stdio.h>\n"
+    "int main(void){"
+    "int stack[4096] = {0};"
+    "int *ptr = stack; ";
+
+const char *CODE_SUFFIX =
+    "return 0;}";
+
 char * action(InstructionType type, size_t repeat_count);
 
 FILE *translateInstructions(InstructionList *instructionList, const char *filename)
@@ -22,6 +31,7 @@ FILE *translateInstructions(InstructionList *instructionList, const char *filena
         free(bufptr);
     }
     fprintf(file, "%s", CODE_SUFFIX);
+    return file;
 }
 
 char * action(InstructionType type, size_t repeatCount)
@@ -35,16 +45,16 @@ char * action(InstructionType type, size_t repeatCount)
     switch(type)
     {
         case INCREMENT:
-            snprintf(buffer, CODELINE_BUF_SIZE, "*ptr+=%llu;", repeatCount);
+            snprintf(buffer, CODELINE_BUF_SIZE, "*ptr+=%zu;", repeatCount);
             break;
         case DECREMENT:
-            snprintf(buffer, CODELINE_BUF_SIZE, "*ptr-=%llu;", repeatCount);
+            snprintf(buffer, CODELINE_BUF_SIZE, "*ptr-=%zu;", repeatCount);
             break;
         case MOVE_FORWARD:
-            snprintf(buffer, CODELINE_BUF_SIZE, "ptr+=%llu;", repeatCount);
+            snprintf(buffer, CODELINE_BUF_SIZE, "ptr+=%zu;", repeatCount);
             break;
         case MOVE_BACKWARD:
-            snprintf(buffer, CODELINE_BUF_SIZE, "ptr-=%llu;", repeatCount);
+            snprintf(buffer, CODELINE_BUF_SIZE, "ptr-=%zu;", repeatCount);
             break;
         case OUTPUT:
             snprintf(buffer, CODELINE_BUF_SIZE, "putchar(*ptr);");

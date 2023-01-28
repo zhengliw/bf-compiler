@@ -9,3 +9,6 @@ ${patsubst %.c,%.o,${module_files}}: ${module_files}
 	@echo ${module_files}
 	@echo $@
 	${CC} -c ${module_files} ${CFLAGS}
+
+chain_test: ${module_files} tests/testModuleChain.c
+	${CC} ${module_files} tests/testModuleChain.c ${CFLAGS}

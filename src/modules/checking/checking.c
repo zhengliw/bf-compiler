@@ -5,7 +5,7 @@
 
 ErrorList * checkInstructions(const InstructionList *instructionList, bool printWarnings)
 {
-    ErrorList * errorList = (ErrorList*) malloc(sizeof(errorList));
+    ErrorList * errorList = newErrorList();
 
     if(!errorList)
         return NULL;

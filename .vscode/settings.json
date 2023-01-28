@@ -10,7 +10,9 @@
         "Preprocess"
     ],
     "files.associations": {
-        "instructionlist.h": "c"
+        "instructionlist.h": "c",
+        "cstdio": "c",
+        "cwchar": "c"
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
 }
