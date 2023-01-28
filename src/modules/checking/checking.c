@@ -1,4 +1,4 @@
-#include "check.h"
+#include "checking.h"
 #include "../instructionList/instructionList.h"
 #include "../instructions/instructions.h"
 

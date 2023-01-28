@@ -1,4 +1,4 @@
-#include "instructionParse.h"
+#include "parsing.h"
 #include "../instructions/instructions.h"
 #include <stdlib.h>
 #include <string.h>

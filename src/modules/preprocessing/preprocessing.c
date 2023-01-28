@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
-#include "instructionPreprocess.h"
+#include "preprocessing.h"
 #include "../instructions/instructions.h"
 
 char *instructionPreprocess(char *instructionString, bool freeInstructionStringAfterUsed)
