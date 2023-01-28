@@ -1,5 +1,5 @@
 # bf-compiler
-Work in progress as always
+ONE STEP AWAY FROM FINISHED!!
 
 The plans are ready, they're in plan.txt.
 
