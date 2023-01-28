@@ -14,7 +14,7 @@ typedef enum {
     BRACKET_AMOUNT_DOES_NOT_MATCH
 } ErrorType;
 
-const char * errorMessages = {
+char * errorMessages[] = {
     "Warning: The amount of left brackets and right brackets don't match."
 };
 

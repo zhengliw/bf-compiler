@@ -1,4 +1,5 @@
 *.out
+*.o
 *.exe
 /out
 /tests/out/
