@@ -4,6 +4,6 @@
 #include <stdio.h>
 #include "../instructionList/instructionList.h"
 
-FILE *translateInstructions(InstructionList *instructionList, const char *filename);
+FILE *CtranslateInstructions(InstructionList *instructionList, const char *filename);
 
 #endif
