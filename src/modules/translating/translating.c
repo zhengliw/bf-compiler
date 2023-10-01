@@ -59,11 +59,16 @@ char * action(InstructionType type, size_t repeatCount)
         case OUTPUT:
             snprintf(buffer, CODELINE_BUF_SIZE, "putchar(*ptr);");
             break;
+        case INPUT:
+            snprintf(buffer, CODELINE_BUF_SIZE, "getchar(ptr);");
+            break;
         case CONDITIONAL_START:
             snprintf(buffer, CODELINE_BUF_SIZE, "while(*ptr){");
             break;
         case CONDITIONAL_END:
             snprintf(buffer, CODELINE_BUF_SIZE, "}");
+            break;
+        default:
             break;
     }
     return buffer;

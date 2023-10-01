@@ -1,6 +1,6 @@
 #include "instructions.h"
 
-InstructionType instructionChar(const char instruction)
+inline InstructionType instructionChar(const char instruction)
 {
     switch(instruction)
     {
