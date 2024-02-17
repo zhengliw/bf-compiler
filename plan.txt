@@ -3,8 +3,6 @@ Plan for the brainfuck compiler
 
 No more interpreting. We are going binary.
 
-Wait no I am not talking about genders-
-
 // I.   Brainfuck in general //
 
     1.  Language design (ripped from Wikipedia)
